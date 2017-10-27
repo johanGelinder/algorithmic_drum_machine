@@ -23,6 +23,13 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-        ofxMaxiSample sample;
-		
+    void audioOut(float * output, int bufferSize, int nChannels);
+    
+    unsigned bufferSize, sampleRate;
+    maxiClock clock;
+    ofxMaxiOsc myOsc;
+    maxiSample kick, snare, sample;
+    
+    int scratch;
+    int counter;
 };
