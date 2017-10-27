@@ -25,6 +25,8 @@ class ofApp : public ofBaseApp{
     
     void audioOut(float * output, int bufferSize, int nChannels);
     
+    float gausianRandom(float mean, float dist);
+    
     unsigned bufferSize, sampleRate;
     maxiClock clock;
     ofxMaxiOsc myOsc;

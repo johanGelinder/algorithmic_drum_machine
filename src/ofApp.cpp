@@ -1,4 +1,7 @@
 #include "ofApp.h"
+#include <iostream>
+#include <chrono>
+#include <random>
 
 //--------------------------------------------------------------
 void ofApp::setup(){
@@ -61,6 +64,18 @@ void ofApp::audioOut(float * output, int bufferSize, int nChannels) {
         output[i * nChannels + 1]  = output[i * nChannels    ];
     }
 }
+
+
+float ofApp::gausianRandom(float mean, float dist){
+    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    std::default_random_engine generator (seed);
+    
+    std::normal_distribution<double> distribution (mean,dist);
+    
+    return distribution(generator);
+}
+
+
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
     
