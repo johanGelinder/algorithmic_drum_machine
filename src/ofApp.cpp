@@ -61,6 +61,7 @@ void ofApp::audioOut(float * output, int bufferSize, int nChannels) {
         output[i * nChannels + 1]  = output[i * nChannels    ];
     }
 }
+
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
     
