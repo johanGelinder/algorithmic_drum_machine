@@ -1,4 +1,4 @@
-#Algorithmic Drum Machine
+# Algorithmic Drum Machine
 
 ## Description
 A drum machine that is using gaussian distribution to randomize drum patterns.
