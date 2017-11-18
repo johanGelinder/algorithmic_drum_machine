@@ -14,18 +14,11 @@ public:
     void keyPressed(int key);
     void keyReleased(int key);
     void mouseMoved(int x, int y );
-    void mouseDragged(int x, int y, int button);
-    void mousePressed(int x, int y, int button);
-    void mouseReleased(int x, int y, int button);
-    void mouseEntered(int x, int y);
-    void mouseExited(int x, int y);
-    void windowResized(int w, int h);
-    void dragEvent(ofDragInfo dragInfo);
-    void gotMessage(ofMessage msg);
+   
     
+    //void drawCircle(boo)
     void audioOut(float * output, int bufferSize, int nChannels);
     
-   // void play(double * output);
     double outputs[2];
     float gausianRandom(float mean, float dist);
     
@@ -35,21 +28,17 @@ public:
     maxiClock clock;
     ofxMaxiOsc myOsc,myOsc2, myOsc3;
     double freq, freq2;
-    maxiSample kick, snare, sample;
+    maxiSample kick, snare;
     maxiEnv env;
     int counter;
-    
+    int threshold = 800;
+
     ofxMaxiMix myMix;
     
     int g1, g2, g3;
-    ofxPanel gui;
-    ofParameter<float> feedback;
-    ofParameter<float> speed;
-    ofParameter<float> depth;
-    ofParameter<int> delay;
-    
+
     double kickSpeed, snareSpeed;
-    ofxMaxiFilter lowpass;
-    maxiFlanger flang;
+    ofSoundStream soundStream;
     
+    bool melody;
 };
