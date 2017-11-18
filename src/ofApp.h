@@ -25,15 +25,31 @@ public:
     
     void audioOut(float * output, int bufferSize, int nChannels);
     
+   // void play(double * output);
+    double outputs[2];
+    float gausianRandom(float mean, float dist);
+    
+    vector<float> lAudio;
+    
     unsigned bufferSize, sampleRate;
     maxiClock clock;
-    ofxMaxiOsc myOsc;
+    ofxMaxiOsc myOsc,myOsc2, myOsc3;
+    double freq, freq2;
     maxiSample kick, snare, sample;
-    
-    int scratch;
+    maxiEnv env;
     int counter;
     
+    ofxMaxiMix myMix;
+    
+    int g1, g2, g3;
     ofxPanel gui;
-    ofParameter<float> frequency;
+    ofParameter<float> feedback;
+    ofParameter<float> speed;
+    ofParameter<float> depth;
+    ofParameter<int> delay;
+    
+    double kickSpeed, snareSpeed;
+    ofxMaxiFilter lowpass;
+    maxiFlanger flang;
     
 };
